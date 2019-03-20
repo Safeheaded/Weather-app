@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     firstMessage.textContent = "Loading...";
     secondsMessage.textContent = "";
     const text = input.value; 
-    fetch(`http://localhost:3000/weather?address=${text}`) 
+    fetch(`/weather?address=${text}`) 
     .then(response => response.json().then(({temperature: {temperature, apparentTemperature}}) => {
       firstMessage.textContent = temperature;
       secondsMessage.textContent = apparentTemperature;

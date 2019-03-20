@@ -11,6 +11,8 @@ const publicDirecotyPath = path.join(__dirname, "../public");
 const viewPath = path.join(__dirname, "../templates/views");
 const partialsPath = path.join(__dirname, "../templates/partials");
 
+const port = process.env.PORT || 3000;
+
 // Sets view engines
 app.set("view engine", "hbs");
 app.set("views", viewPath);
@@ -78,6 +80,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Sever started");
+app.listen(port, () => {
+  console.log(`Sever started, listening on ${port}`);
 });
